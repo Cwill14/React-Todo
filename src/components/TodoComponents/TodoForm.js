@@ -4,16 +4,17 @@ import React from 'react';
 // Your input field should take in user input, and allow a user to press `Enter`
 //      or click on the `Submit Button` to add a todo to your list.
 
-const TodoForm = () => {
+const TodoForm = (props) => {
     return (
-        <form onSubmit="addToList">
+        <form onSubmit={props.addList}>
             <input
                 type="text"
                 placeholder="task"
-                // value={someValue}
+                value={props.text}
+                onChange={props.onInput}
             />
-            <button type="submit" >Add Task</button>
-            <button>Clear Completed</button>
+            <button >Add Task</button>
+            <button onClick={props.clearList}>Clear Completed</button>
         </form>
     );
 }

@@ -22,24 +22,44 @@ class App extends React.Component {
   constructor () {
     super();
     this.state = {
-      task: ['x', 'y'],
+      list: ['x', 'y'],
+      text: ""
       // id: '',
       // completed: ''
     };
   }
-  addToList(){
-        
+  addToList = e => {
+    // console.log("its working");
+    e.preventDefault();
+    this.setState(
+      { 
+        list: [...this.state.list, this.state.text],
+        text: ""
+      }
+    )
   }
-  clearList(){
-
+  clearList = e => {
+    // console.log("its totally working");
+    e.preventDefault();
   }
-
+  onInput = e => {
+    e.preventDefault();
+    this.setState(
+      {text: e.target.value}
+    )
+    // console.log(this.state.text);
+  }
   render() {
     return (
       <div>
         <h2>Clark's To-do App!</h2>
-        <TodoList thing={this.state.task}/>
-        <TodoForm onSubmit={this.addToList}/>
+        <TodoList thing={this.state.list}/>
+        <TodoForm 
+          addList={this.addToList}
+          clearList={this.clearList}
+          text={this.state.text}
+          onInput={this.onInput}
+        />
       </div>
     );
   }
