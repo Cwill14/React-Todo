@@ -1,19 +1,20 @@
 import React from 'react';
 
+import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 
-export const data = [
-  {
-    task: 'Organize Garage',
-    id: 1528817077286,
-    completed: false
-  },
-  {
-    task: 'Bake Cookies',
-    id: 1528817084358,
-    completed: false
-  }
-];
+// export const data = [
+//   {
+//     task: 'Organize Garage',
+//     id: 1528817077286,
+//     completed: false
+//   },
+//   {
+//     task: 'Bake Cookies',
+//     id: 1528817084358,
+//     completed: false
+//   }
+// ];
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -21,16 +22,24 @@ class App extends React.Component {
   constructor () {
     super();
     this.state = {
-      task: '',
-      id: '',
-      completed: ''
+      task: ['x', 'y'],
+      // id: '',
+      // completed: ''
     };
   }
+  addToList(){
+        
+  }
+  clearList(){
+
+  }
+
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList />
+        <h2>Clark's To-do App!</h2>
+        <TodoList thing={this.state.task}/>
+        <TodoForm onSubmit={this.addToList}/>
       </div>
     );
   }

@@ -1,15 +1,10 @@
 import React from 'react';
 
-import { data } from ''
 
 // takes in the `todo` data and displays the task to the screen.
 
-const Todo = (data) => {
-    return(
-        <div>
-            task
-        </div>
-    );
+const Todo = (props) => {
+    return <li>{props.arr}</li>
 };
 
 export default Todo;

@@ -4,28 +4,18 @@ import React from 'react';
 // Your input field should take in user input, and allow a user to press `Enter`
 //      or click on the `Submit Button` to add a todo to your list.
 
-class TodoForm extends React.Component {
-    
-    addToList(){
-        
-    }
-    clearList(){
-
-    }
-
-    render() {
-        return (
-            <form onSubmit={addToList}>
-                <input
-                    type="text"
-                    placeholder="task"
-                    value={someValue}
-                />
-                <button type="submit" onClick="addToList">Add Task</button>
-                <button onClick="clearList">Clear Completed</button>
-            </form>
-        );
-    }
+const TodoForm = () => {
+    return (
+        <form onSubmit="addToList">
+            <input
+                type="text"
+                placeholder="task"
+                // value={someValue}
+            />
+            <button type="submit" >Add Task</button>
+            <button>Clear Completed</button>
+        </form>
+    );
 }
 
 export default TodoForm;
