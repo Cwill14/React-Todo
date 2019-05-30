@@ -22,19 +22,37 @@ class App extends React.Component {
   constructor () {
     super();
     this.state = {
-      list: ['x', 'y'],
-      text: ""
-      // id: '',
-      // completed: ''
+      list: [
+        {
+          task: 'Organize Garage',
+          id: 1528817077286,
+          completed: false
+        },
+        {
+          task: 'Bake Cookies',
+          id: 1528817084358,
+          completed: false
+        }
+      ],
+      task: "",
+      id: "",
+      completed: ""
     };
   }
   addToList = e => {
     // console.log("its working");
     e.preventDefault();
+    const newTodo = {
+      task: this.state.task,
+      id: this.state.id,
+      completed: this.state.completed
+    }
     this.setState(
       { 
-        list: [...this.state.list, this.state.text],
-        text: ""
+        list: [...this.state.list, newTodo],
+        task: "",
+        id: "",
+        completed: ""
       }
     )
   }
@@ -45,7 +63,7 @@ class App extends React.Component {
   onInput = e => {
     e.preventDefault();
     this.setState(
-      {text: e.target.value}
+      {[e.target.name]: e.target.value}
     )
     // console.log(this.state.text);
   }
@@ -53,11 +71,11 @@ class App extends React.Component {
     return (
       <div>
         <h2>Clark's To-do App!</h2>
-        <TodoList thing={this.state.list}/>
+        <TodoList taskList={this.state.list}/>
         <TodoForm 
           addList={this.addToList}
           clearList={this.clearList}
-          text={this.state.text}
+          task={this.state.task}
           onInput={this.onInput}
         />
       </div>

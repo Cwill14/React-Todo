@@ -8,11 +8,11 @@ import Todo from './Todo';
 
 const TodoList = (props) => {
     return (
-        <ul>
-            {props.thing.map((prop) => (
-               <Todo arr={prop}/>
+        <div>
+            {props.taskList.map(task => (
+               <Todo taskObj={task}/>
             ))}
-        </ul>    
+        </div>    
     );
 };
 
