@@ -6,7 +6,7 @@ import './Todo.css';
 const Todo = props => {
     return (
         <div 
-            className={`task${props.completed === true ? ' completed-style' : ''}`}
+            className={`task ${props.taskObj.completed === true ? ' completed-style' : ''}`}
             onClick={() => props.toggleComplete(props.taskObj.id)}
         >
             {props.taskObj.task}
