@@ -7,7 +7,7 @@ const Todo = props => {
     return (
         <div 
             className={`task${props.completed === true ? ' completed-style' : ''}`}
-            onClick={() => props.toggleComplete(props.id)}
+            onClick={() => props.toggleComplete(props.taskObj.id)}
         >
             {props.taskObj.task}
         </div>

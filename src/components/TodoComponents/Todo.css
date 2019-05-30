@@ -1,11 +1,11 @@
-/* .task {
-    border: 1px solid black;
+.task {
+    /* border: 1px solid black; */
     width: 35%;
+    margin: 10px;
 }
-.task:hover {
+.task:active {
     background-color: #BBB;
-    cursor: pointer;
-} */
+}
 .completed-style {
     text-decoration: line-through;
 }
