@@ -39,9 +39,13 @@ class App extends React.Component {
       completed: ""
     };
   }
-  // toggleComplete = () => {
-
-  // }
+  toggleComplete = (param) => {
+    this.setState( () => {
+      this.list.map(() => {
+        
+      });
+    });
+  };
 
   addToList = e => {
     // console.log("its working");
@@ -65,7 +69,7 @@ class App extends React.Component {
   clearCompleted = e => {
     // console.log("its totally working");
     e.preventDefault();
-    const newList = this.state.list.filter(item => item.completed === false);
+    let newList = this.state.list.filter(item => item.completed === false);
     console.log(newList);
     this.setState(
       {
