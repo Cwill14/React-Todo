@@ -1,0 +1,11 @@
+.task {
+    border: 1px solid black;
+    width: 35%;
+}
+.task:hover {
+    background-color: #BBB;
+    cursor: pointer;
+}
+.completed-style {
+    text-decoration: line-through;
+}
