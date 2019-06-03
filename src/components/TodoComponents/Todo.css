@@ -1,0 +1,11 @@
+.task {
+    /* border: 1px solid black; */
+    width: 35%;
+    margin: 10px;
+}
+.task:active {
+    background-color: #BBB;
+}
+.completed-style {
+    text-decoration: line-through;
+}
